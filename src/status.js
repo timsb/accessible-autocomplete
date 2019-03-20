@@ -16,13 +16,13 @@ export default class Status extends Component {
   };
 
   state = {
-    bump: false
+    bump: '\u00A0'
   }
 
   componentWillReceiveProps ({ queryLength }) {
     const hasChanged = queryLength !== this.props.queryLength
     if (hasChanged) {
-      this.setState(({ bump }) => ({ bump: !bump }))
+      this.setState(({ bump }) => ({ bump: bump+'\u00A0' }))
     }
   }
 
@@ -59,6 +59,7 @@ export default class Status extends Component {
     return <div
       aria-atomic='true'
       aria-live='polite'
+      aria-relevant='all'
       role='status'
       style={{
         border: '0',
@@ -74,7 +75,7 @@ export default class Status extends Component {
       }}
     >
       {content}
-      <span>{bump ? ',' : ',,'}</span>
+      <span>{bump}</span>
     </div>
   }
 }
