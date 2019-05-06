@@ -60,7 +60,7 @@ export default class Status extends Component {
         id='flip'
       aria-atomic='true'
       aria-live='polite'
-      role='status'
+
       style={{
         border: '0',
         clip: 'rect(0 0 0 0)',
@@ -80,7 +80,7 @@ export default class Status extends Component {
         id='flop'
       aria-atomic='true'
       aria-live='polite'
-      role='status'
+
       style={{
         border: '0',
         clip: 'rect(0 0 0 0)',
